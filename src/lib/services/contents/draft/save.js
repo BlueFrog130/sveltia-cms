@@ -742,6 +742,8 @@ export const saveEntry = async ({ skipCI = undefined } = {}) => {
             const sha = await getHash(file);
             const dupFile = savingAssets.find((f) => f.sha === sha);
 
+            // TODO: Optimize image
+
             // Check if the file has already been added for other field or locale
             if (dupFile) {
               content[keyPath] = publicAssetFolder
